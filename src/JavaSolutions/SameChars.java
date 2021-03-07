@@ -1,30 +1,37 @@
 package JavaSolutions;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class SameChars {
     public static void main(String[] args) {
-        same("abcc","cab");
+        System.out.println(same("abbcca", "cab"));
     }
 
-    private static void same(String str1, String str2) {
-        boolean flag=true;
-        for(int i=0; i<str1.length(); i++){
-            for(int j=0; j<str2.length(); j++){
-                if(str1.charAt(i)==str2.charAt(j)){
-                    str1.replace(""+str1.charAt(i),"");
-                    str2.replace(""+str1.charAt(j),"");
-                    flag=true;
-                    break;
-                }else{
-                    flag=false;
-                }
-            }
-            if(flag==false){
-                System.err.println("not same characters");
-                break;
+    private static boolean same(String str1, String str2) {
+        String[] arr1 = str1.split("");
+        String[] arr2 = str2.split("");
+        Map<String, Integer> map1 = new LinkedHashMap<>();
+        Map<String, Integer> map2 = new LinkedHashMap<>();
+
+        for (String s : arr1) {
+            if(!map1.containsKey(s)){
+                map1.put(s,1);
+            }else {
+                map1.put(s,map1.get(s)+1);
             }
         }
-        if(flag==true){
-            System.out.println("Yes same characters...");
+        for (String s : arr2) {
+            if(!map2.containsKey(s)){
+                map2.put(s,1);
+            }else {
+                map2.put(s,map2.get(s)+1);
+            }
+        }
+        if (map1.keySet().equals(map2.keySet())){
+            return true;
+        } else {
+            return false;
         }
     }
 }

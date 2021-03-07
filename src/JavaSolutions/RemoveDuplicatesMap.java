@@ -1,15 +1,16 @@
 package JavaSolutions;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-public class FrequencyWithMaps {
+public class RemoveDuplicatesMap {
     public static void main(String[] args) {
-        String str = "google";
+        String str = "aaabbbcccabcdef";
         freq(str);
     }
 
-    static void freq(String str){
-        String[] arr=str.split("");
+    private static void freq(String str) {
+        String[] arr = str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : arr) {
             if(!map.containsKey(s)){
@@ -18,8 +19,8 @@ public class FrequencyWithMaps {
                 map.put(s,map.get(s)+1);
             }
         }
-        for (Map.Entry<String, Integer> each : map.entrySet()){
-            System.out.println(each.getKey() + " occures " + each.getValue() + " times...");
-        }
+        map.forEach((word, frequency) -> {
+            System.out.print(word);
+        });
     }
 }

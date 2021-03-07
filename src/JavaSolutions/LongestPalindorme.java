@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LongestPalindorme {
     public static void main(String[] args) {
-        String str = "aya yayay elle abcdefedcba";
+        String str = "aya yayay elle ey_edip_adanada_pide_ye";
         System.out.println(longestPalindrome(str));
     }
 
@@ -34,7 +34,6 @@ public class LongestPalindorme {
         boolean pal = true;
         for (int i = 0; i <= len / 2; i++) {
             if (str.charAt(i) == str.charAt(len - i)) {
-
             } else {
                 pal = false;
             }

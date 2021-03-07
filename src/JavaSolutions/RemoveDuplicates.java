@@ -5,21 +5,16 @@ import java.util.stream.Collectors;
 
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        System.out.println(remove1("kucukvatan"));
-        System.out.println(remove2("kucukvatan"));
+        System.out.println(remove("google"));
     }
 
-    private static String remove1(String str) {
+    private static String remove(String str) {
         String remove="";
         for(int i=0; i<str.length(); i++){
-            if(!remove.contains(str.substring(i,i+1))){
-                remove+=str.substring(i,i+1);
+            if(!remove.contains(""+str.charAt(i))){
+                remove+=str.charAt(i);
             }
         }
         return remove;
-    }
-
-    private static String remove2(String str) {
-        return Arrays.stream(str.split("")).distinct().collect(Collectors.joining());
     }
 }

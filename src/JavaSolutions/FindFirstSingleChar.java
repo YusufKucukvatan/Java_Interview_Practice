@@ -3,13 +3,12 @@ package JavaSolutions;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class FirstSingleChar {
+public class FindFirstSingleChar {
     public static void main(String[] args) {
-        System.out.println(function("google"));
-
+        System.out.println(findFirstSingleChar("google"));
     }
 
-    static String function(String str){
+    static String findFirstSingleChar(String str){
 
         Map<String, Integer> map = new LinkedHashMap<>();
         for(String s : str.split("")){

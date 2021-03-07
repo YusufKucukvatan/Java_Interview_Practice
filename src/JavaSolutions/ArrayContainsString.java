@@ -2,7 +2,7 @@ package JavaSolutions;
 
 import java.util.*;
 
-public class StringArrayContains {
+public class ArrayContainsString {
     public static void main(String[] args) {
         String[] arr={"abc","bcba", "abcd", "ggh", "klsrtabcabc", "118*90", "ggggggg"};
         String str = "abbc";

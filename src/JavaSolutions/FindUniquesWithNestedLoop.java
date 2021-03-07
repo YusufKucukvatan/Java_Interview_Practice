@@ -1,6 +1,6 @@
 package JavaSolutions;
 
-public class FrequencyWithNestedLoop {
+public class FindUniquesWithNestedLoop {
     public static void main(String[] args) {
         String str = "google";
         System.out.println(freq(str));
