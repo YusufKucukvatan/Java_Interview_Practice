@@ -9,7 +9,6 @@ public class FrequencyWithMaps {
     }
 
     static String freq(String str){
-        String result="";
         String[] arr=str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : arr) {
