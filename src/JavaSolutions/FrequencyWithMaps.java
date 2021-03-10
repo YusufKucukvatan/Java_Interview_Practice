@@ -21,5 +21,8 @@ public class FrequencyWithMaps {
         for (Map.Entry<String, Integer> each : map.entrySet()){
             System.out.println(each.getKey() + " occures " + each.getValue() + " times...");
         }
+        map.forEach((k,v)->{
+            System.out.println(k + " occures " + v + " times...");
+        });
     }
 }
