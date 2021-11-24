@@ -9,7 +9,8 @@ public class Fibonacci {
     }
 
     static int n1=1, n2=2, n3=0;
-    static ArrayList<Integer> fiboList = new ArrayList<>(Arrays.asList(1,2));
+    static ArrayList<Integer> fiboList = new ArrayList<>(Arrays.asList(n1,n2));
+
     public static ArrayList<Integer> fibonacci(int count){
         if (count > 0) {
             n3 = n1 + n2;

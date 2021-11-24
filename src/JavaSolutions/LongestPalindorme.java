@@ -7,6 +7,7 @@ public class LongestPalindorme {
     public static void main(String[] args) {
         String str = "aya yayay elle ey_edip_adanada_pide_ye";
         System.out.println(longestPalindrome(str));
+        System.out.println(isPalindrome("adada"));
     }
 
     public static String longestPalindrome(String Palin) {
@@ -30,14 +31,12 @@ public class LongestPalindorme {
         return result;
     }
     private static boolean isPalindrome(String str) {
-        int len = str.length() - 1;
-        boolean pal = true;
-        for (int i = 0; i <= len / 2; i++) {
-            if (str.charAt(i) == str.charAt(len - i)) {
-            } else {
-                pal = false;
+        int last = str.length() - 1;
+        for (int i = 0; i <= last / 2; i++) {
+            if (!(str.charAt(i) == str.charAt(last - i))) {
+                return false;
             }
         }
-        return pal;
+        return true;
     }
 }

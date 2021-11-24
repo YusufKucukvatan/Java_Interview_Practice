@@ -6,8 +6,6 @@ public class ReverseString {
     public static void main(String[] args) {
         String str="abcdef";
         System.out.println(reverse1(str));
-        System.out.println(reverse2(str));
-        System.out.println(reverse3(str));
     }
 
     private static String reverse1(String str) {
@@ -18,6 +16,9 @@ public class ReverseString {
         return reverse;
     }
 
+
+
+    
     private static String reverse2(String str) {
         return new StringBuilder(str).reverse().toString();
     }

@@ -5,10 +5,10 @@ import java.util.*;
 public class FrequencyWithMaps {
     public static void main(String[] args) {
         String str = "google";
-        freq(str);
+        frequency(str);
     }
 
-    static void freq(String str){
+    static void frequency(String str){
         String[] arr=str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : arr) {

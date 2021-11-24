@@ -2,21 +2,19 @@ package JavaSolutions;
 
 public class PrimeNumbers {
     public static void main(String[] args) {
-        System.out.println(isPrime(37));
+        System.out.println(isPrime(7));
     }
 
     private static boolean isPrime(int num) {
-        boolean flag=true;
         if(num<2){
-            flag=false;
+            return false;
         }else{
             for (int i = 2; i < num; i++) {
                 if(num%i==0){
-                    flag=false;
-                    break;
+                    return false;
                 }
             }
         }
-        return flag;
+        return true;
     }
 }

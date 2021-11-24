@@ -2,14 +2,15 @@ package JavaSolutions;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class RemoveDuplicatesMap {
     public static void main(String[] args) {
         String str = "aaabbbcccabcdef";
-        freq(str);
+        System.out.println(freq(str));
     }
 
-    private static void freq(String str) {
+    private static Set<String> freq(String str) {
         String[] arr = str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : arr) {
@@ -19,8 +20,6 @@ public class RemoveDuplicatesMap {
                 map.put(s,map.get(s)+1);
             }
         }
-        map.forEach((word, frequency) -> {
-            System.out.print(word);
-        });
+        return map.keySet();
     }
 }
