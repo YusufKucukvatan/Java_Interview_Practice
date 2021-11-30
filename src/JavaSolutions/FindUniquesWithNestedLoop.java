@@ -3,22 +3,22 @@ package JavaSolutions;
 public class FindUniquesWithNestedLoop {
     public static void main(String[] args) {
         String str = "google";
-        System.out.println(freq(str));
+        System.out.println(findUniques(str));
     }
 
-    static String freq(String str){
-        int count;
+    static String findUniques(String str){
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-            count=0;
+            int count=0;
             for (int j = 0; j < str.length(); j++) {
                 if (str.charAt(i)==str.charAt(j)){
                     count++;
                 }
             }
             if (count == 1) {
-                return str.substring(i, i + 1);
+                result += str.charAt(i);
             }
         }
-        return "There is no unique char in string";
+        return result;
     }
 }

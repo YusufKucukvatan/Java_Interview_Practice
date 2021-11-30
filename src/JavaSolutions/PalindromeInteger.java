@@ -2,7 +2,7 @@ package JavaSolutions;
 
 public class PalindromeInteger {
     public static void main(String[] args) {
-        palindrome(3223);
+        palindrome(1221);
     }
 
     public static void palindrome(int num){

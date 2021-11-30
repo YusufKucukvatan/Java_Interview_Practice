@@ -6,10 +6,10 @@ public class ArrayContainsString {
     public static void main(String[] args) {
         String[] arr={"abc","bcba", "abcd", "ggh", "klsrtabcabc", "118*90", "ggggggg"};
         String str = "abbc";
-        isContain(arr, str);
+        arrayContains(arr, str);
     }
 
-    private static void isContain(String[] arr, String str) {
+    private static void arrayContains(String[] arr, String str) {
         for (int i = 0; i < arr.length; i++) {
             String[] element=arr[i].split("");
             Map<String, Integer> map = new LinkedHashMap<>();

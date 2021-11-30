@@ -13,19 +13,5 @@ public class Predicate {
         List names = Arrays.asList("Reflection","Collection","Stream");
         List result =  Arrays.asList(names.stream().filter(s->s.toString().startsWith("S")).collect(Collectors.toList()));
         System.out.println(result);
-
-        /*
-        int num = 4334;  ==>
-        int reverse=0;   ==> 4334
-
-        num%10 ==> 4
-        num/10
-
-        reverse = 4
-        reverse*10
-
-
-         */
-
     }
 }

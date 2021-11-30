@@ -11,14 +11,11 @@ public class ReverseString {
     private static String reverse1(String str) {
         String reverse="";
         for (int i=str.length()-1; i>=0; i--) {
-            reverse+=str.substring(i,i+1);
+            reverse+=str.charAt(i);
         }
         return reverse;
     }
 
-
-
-    
     private static String reverse2(String str) {
         return new StringBuilder(str).reverse().toString();
     }

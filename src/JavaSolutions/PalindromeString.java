@@ -3,6 +3,10 @@ package JavaSolutions;
 public class PalindromeString {
     public static void main(String[] args) {
         String pal = "ey edip adanada pide ye";
+        isPalindrome(pal);
+    }
+
+    private static void isPalindrome(String pal) {
         int a = 0;
         int b = pal.length()-1;
         boolean flag = true;

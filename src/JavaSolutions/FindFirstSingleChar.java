@@ -9,7 +9,7 @@ public class FindFirstSingleChar {
     }
 
     static String findFirstSingleChar(String str){
-
+        String result = "There is no unique character";
         Map<String, Integer> map = new LinkedHashMap<>();
         for(String s : str.split("")){
             if(!map.containsKey(s)){
@@ -18,12 +18,14 @@ public class FindFirstSingleChar {
                 map.put(s, (map.get(s)+1));
             }
         }
+
         for(Map.Entry<String, Integer> each : map.entrySet()){
             if(each.getValue()==1){
-                return each.getKey();
+                result = each.getKey();
+                break;
             }
         }
-        return "There is no unique character";
+        return result;
     }
 }
 
