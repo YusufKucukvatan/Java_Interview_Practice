@@ -4,8 +4,8 @@ import java.util.*;
 
 public class ReverseString {
     public static void main(String[] args) {
-        String str="abcdef";
-        System.out.println(reverse1(str));
+        String str="abc";
+        System.out.println("reverse: " + reverse1(str));
     }
 
     private static String reverse1(String str) {
