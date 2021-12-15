@@ -14,25 +14,18 @@ public class ReverseLettersOnly {
         int tail = chars.length - 1;
 
         while (head < tail) {
-            if (!Character.isAlphabetic(chars[head]))
+            if (!Character.isAlphabetic(chars[head])) {
                 head++;
-            else if(!Character.isAlphabetic(chars[tail]))
+            } else if(!Character.isAlphabetic(chars[tail])) {
                 tail--;
-            else
-            {
-                char tmp = chars[head];
+            } else {
+                char temp = chars[head];
                 chars[head] = chars[tail];
-                chars[tail] = tmp;
+                chars[tail] = temp;
                 head++;
                 tail--;
             }
         }
-
-        String result = "";
-        for (char ch : chars){
-            result += ch;
-        }
-
-        return result;
+        return new String(chars);
     }
 }

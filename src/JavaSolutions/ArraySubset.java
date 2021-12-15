@@ -13,7 +13,6 @@ public class ArraySubset
         if (arr1.length==0 || arr2.length == 0 || arr1.length<arr2.length){
             return false;
         }
-
         for (int subset : arr2) {
             int count = 0;
             for (int set : arr1) {
@@ -26,7 +25,6 @@ public class ArraySubset
                 return false;
             }
         }
-
         return true;
     }
 }

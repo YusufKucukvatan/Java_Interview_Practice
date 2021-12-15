@@ -12,9 +12,9 @@ public class FindUniquesWithMap {
 
     private static List<String> uniques(String str) {
         List<String> result = new ArrayList<>();
-        String[] arr = str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
-        for (String s : arr) {
+
+        for (String s : str.split("")) {
             if (!map.containsKey(s)) {
                 map.put(s, 1);
             } else {

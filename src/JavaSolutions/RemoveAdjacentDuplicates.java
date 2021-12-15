@@ -5,9 +5,11 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class RemoveAdjacentDuplicates {
     public static void main(String[] args) {
-        String str = "azxaxzyyzyzzyx";
+        // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+        String str = "aabzxxzyy";
         System.out.println("removeAdjacent(str) = " + removeAdjacent(str));
     }
+
     static String removeAdjacent(String str){
         Stack<Character> stack = new Stack<>();
         for (char ch : str.toCharArray()) {

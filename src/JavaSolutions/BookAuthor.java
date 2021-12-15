@@ -2,8 +2,13 @@ package JavaSolutions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import sun.awt.image.ImageWatched;
 
 public class BookAuthor {
     /*
@@ -32,6 +37,7 @@ public class BookAuthor {
         map.put("Book5","Kenan");
         map.put("Book1","Berat");
         map.put("Book4","Furkan");
+        map.put("Book8","Furkan");
         System.out.println("collectBooks(map) = " + collectBooks(map));
     }
 
@@ -44,9 +50,8 @@ public class BookAuthor {
                 bookList.add(book);
                 newMap.put(author, bookList);
             } else {
-                List<String> updatedList = new ArrayList<>(newMap.get(author));
-                updatedList.add(book);
-                newMap.put(author,updatedList);
+                newMap.get(author).add(book);
+                newMap.put(author,newMap.get(author));
             }
         });
         return newMap;

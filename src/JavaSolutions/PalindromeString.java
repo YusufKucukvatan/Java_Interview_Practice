@@ -2,18 +2,19 @@ package JavaSolutions;
 
 public class PalindromeString {
     public static void main(String[] args) {
-        String pal = "ey edip adanada pide ye";
+        String pal = "radar";
         System.out.println("isPalindrome(pal) = " + isPalindrome(pal));
     }
 
-    private static boolean isPalindrome(String pal) {
-        boolean flag = true;
-        for (int start=0, end=pal.length()-1; start<end; start++, end--) {
-            if (pal.charAt(start) != pal.charAt(end)) {
-                flag = false;
-                break;
+    private static boolean isPalindrome(String str) {
+        int head=0, tail=str.length()-1;
+        while ( head<tail) {
+            if (str.charAt(head) != str.charAt(tail)) {
+                return false;
             }
+            head++;
+            tail--;
         }
-        return flag;
+        return true;
     }
 }

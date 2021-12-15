@@ -5,37 +5,60 @@ import java.util.List;
 
 public class PalindormeLongest {
     public static void main(String[] args) {
-        String str = "aya yayay elle ey_edip_adanada_pide_ye";
+        // https://leetcode.com/problems/longest-palindromic-substring/
+        String str = "radax";
         System.out.println(longestPalindrome(str));
-        System.out.println(isPalindrome("adada"));
     }
 
-    public static String longestPalindrome(String str) {
-        List<String> list = new ArrayList<>();
-        String result = "";
+    /*
+    * r -> result = r
+    * a
+    * d
+    * a
+    * x
+    * ra
+    * ad
+    * da
+    * ax
+    * rad
+    * ada -> result = ada
+    * dax
+    * rada
+    * adax
+    * radax
+    * */
 
-        int len = str.length();
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j < len-1-i; j++) {
-                if (isPalindrome(str.substring(j, j + i + 2)))
-                    list.add(str.substring(j, j + i + 2));
-            }
+    public static String longestPalindrome(String str) {
+        if (isPalindrome(str)) {
+            return str;
         }
+        String result = "";
         int longest = 0;
-        for (String each : list) {
-            if (longest < each.length()) {
-                longest = each.length();
-                result = each;
+        int l = str.length();
+
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < l-i; j++) {
+                int head = j;
+                int tail = j+i+1;
+                String word = str.substring(head, tail);
+                System.out.println(word);
+                if (isPalindrome(word) && word.length()>longest) {
+                    result = word;
+                }
             }
         }
         return result;
     }
+
     private static boolean isPalindrome(String str) {
-        int last = str.length() - 1;
-        for (int i = 0; i <= last / 2; i++) {
-            if (!(str.charAt(i) == str.charAt(last - i))) {
+        int head=0;
+        int tail=str.length()-1;
+        while (head<tail) {
+            if (str.charAt(head) != str.charAt(tail)) {
                 return false;
             }
+            head++;
+            tail--;
         }
         return true;
     }

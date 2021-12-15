@@ -2,10 +2,14 @@ package JavaSolutions;
 
 public class PalindromeInteger {
     public static void main(String[] args) {
-        palindrome(1221);
+        // https://leetcode.com/problems/palindrome-number/
+        System.out.println("palindrome = " + isPalindrome(121));
     }
 
-    public static void palindrome(int num){
+    public static boolean isPalindrome(int num){
+        if (num<0) {
+            return false;
+        }
         int temp=num;
         int reverse=0;
 
@@ -14,11 +18,6 @@ public class PalindromeInteger {
             reverse+=temp%10;
             temp/=10;
         }
-
-        if(reverse==num){
-            System.out.println("This number is a palindrome");
-        }else {
-            System.out.println("This number is not a palindrome");
-        }
+        return reverse == num;
     }
 }

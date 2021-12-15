@@ -10,10 +10,9 @@ public class ShuffleArray {
     }
 
     static String[] shuffle(String[] arr) {
-        String temp = "";
         for (int i = 0; i < arr.length; i++) {
-            int j = (int)(Math.random()*4);
-            temp = arr[i];
+            int j = (int)(Math.random()* arr.length);
+            String temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
         }

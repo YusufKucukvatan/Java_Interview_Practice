@@ -4,27 +4,24 @@ import java.util.Stack;
 
 public class ParenthesisBalance {
     public static void main(String[] args) {
-        String str1 = "[]{}({[]})({{{{{[[[[[((((()))))]]]]]}}}}})";
-        String str2 = "[](){[((((()))))]}";
-        System.out.println("Solution with replaceAll: " + isBalancedReplaceAll(str1));
-        System.out.println("Solution with stack: " + isBalancedStack(str1));
+        // https://leetcode.com/problems/valid-parentheses/
+        String str1 = "({[]})()";
+        System.out.println("Solution with stack: " + isBalancedWithStack(str1));
     }
 
-    private static boolean isBalancedStack(String str) {
-        if (null == str || ((str.length() % 2) != 0)) {
+    private static boolean isBalancedWithStack(String str) {
+        if (((str.length() % 2) != 0) || str == null) {
             return false;
         }
-
         Stack<Character> stack = new Stack<>();
-        for (char c : str.toCharArray())
-        {
+        for (char c : str.toCharArray()) {
             if (c=='(' || c=='{' || c=='['){
                 stack.push(c);
-            } else if (c==')' && !stack.isEmpty() && stack.peek()=='('){
+            } else if (c==')' && stack.peek()=='('){
                 stack.pop();
-            } else if (c=='}' && !stack.isEmpty() && stack.peek()=='{'){
+            } else if (c=='}' && stack.peek()=='{'){
                 stack.pop();
-            } else if (c==']' && !stack.isEmpty() && stack.peek()=='['){
+            } else if (c==']' && stack.peek()=='['){
                 stack.pop();
             } else {
                 stack.push(c);
@@ -33,7 +30,10 @@ public class ParenthesisBalance {
         return stack.isEmpty();
     }
 
-    private static boolean isBalancedReplaceAll(String str) {
+
+
+    private static boolean isBalancedWithReplaceAll(String str) {
+
         if (null == str || ((str.length() % 2) != 0)) {
             return false;
         }
@@ -43,6 +43,7 @@ public class ParenthesisBalance {
                      .replaceAll("\\[\\]", "")
                      .replaceAll("\\{\\}", "");
         }
+
         return str.length() == 0;
     }
 
