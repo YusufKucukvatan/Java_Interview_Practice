@@ -1,9 +1,6 @@
 package JavaSolutions;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Anagram {
     public static void main(String[] args) {
@@ -11,7 +8,6 @@ public class Anagram {
         String str1 = "race";
         String str2 = "care";
         System.out.println("isAnagram1(str1, str2) = " + isAnagram1(str1, str2));
-        System.out.println("isAnagram2(str1, str2) = " + isAnagram2(str1, str2));
     }
 
     static boolean isAnagram1(String str1, String str2) {
@@ -20,14 +16,16 @@ public class Anagram {
         }
         char[] ch1 = str1.toLowerCase().toCharArray();
         char[] ch2 = str2.toLowerCase().toCharArray();
-//        char[] ch1 = toLowerCase(str1).toCharArray();
-//        char[] ch2 = toLowerCase(str2).toCharArray();
         Arrays.sort(ch1);
         Arrays.sort(ch2);
-        String str3 = new String(ch1);
-        String str4 = new String(ch2);
-        return str3.equals(str4);
+
+        return Arrays.toString(ch1).equals(Arrays.toString(ch2));
     }
+
+
+
+
+
 
     static String toLowerCase(String str) {
         String lower = "";

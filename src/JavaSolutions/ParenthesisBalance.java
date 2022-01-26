@@ -10,10 +10,12 @@ public class ParenthesisBalance {
     }
 
     private static boolean isBalancedWithStack(String str) {
-        if (((str.length() % 2) != 0) || str == null) {
+        if (str.length() % 2 != 0) {
             return false;
         }
+
         Stack<Character> stack = new Stack<>();
+
         for (char c : str.toCharArray()) {
             if (c=='(' || c=='{' || c=='['){
                 stack.push(c);

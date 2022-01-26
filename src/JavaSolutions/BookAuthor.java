@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import sun.awt.image.ImageWatched;
-
 public class BookAuthor {
     /*
     Input:

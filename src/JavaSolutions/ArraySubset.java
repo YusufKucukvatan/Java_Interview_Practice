@@ -8,9 +8,9 @@ public class ArraySubset
         System.out.println("isSubset(arr1, arr2) = " + isSubset(arr1, arr2));
     }
 
-    static boolean isSubset(int arr1[], int arr2[])
+    static boolean isSubset(int[] arr1, int[] arr2)
     {
-        if (arr1.length==0 || arr2.length == 0 || arr1.length<arr2.length){
+        if (arr2.length == 0 || arr1.length < arr2.length){
             return false;
         }
         for (int subset : arr2) {

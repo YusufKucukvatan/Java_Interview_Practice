@@ -11,7 +11,7 @@ public class ShuffleArray {
 
     static String[] shuffle(String[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int j = (int)(Math.random()* arr.length);
+            int j = (int)(Math.random() * arr.length);
             String temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;

@@ -2,6 +2,7 @@ package JavaSolutions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class AddTwoNumbers {
@@ -18,6 +19,9 @@ public class AddTwoNumbers {
         int sum1 =0;
         int sum2 =0;
         int sum;
+
+        Collections.reverse(list1);
+        Collections.reverse(list2);
 
         for (int i = list1.size()-1; i >= 0; i--) {
             sum1 *= 10;

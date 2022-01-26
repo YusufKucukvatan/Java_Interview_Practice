@@ -10,17 +10,18 @@ public class FindUniquesWithMap {
         System.out.println(uniques("aaabcccdef"));
     }
 
-    private static List<String> uniques(String str) {
-        List<String> result = new ArrayList<>();
-        Map<String, Integer> map = new LinkedHashMap<>();
+    private static List<Character> uniques(String str) {
+        List<Character> result = new ArrayList<>();
+        Map<Character, Integer> map = new LinkedHashMap<>();
 
-        for (String s : str.split("")) {
-            if (!map.containsKey(s)) {
-                map.put(s, 1);
+        for (char c : str.toCharArray()) {
+            if (!map.containsKey(c)) {
+                map.put(c, 1);
             } else {
-                map.put(s, map.get(s) + 1);
+                map.put(c, map.get(c) + 1);
             }
         }
+
         map.forEach((k, v) -> {
             if (v == 1) {
                 result.add(k);
